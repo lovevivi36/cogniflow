@@ -7,6 +7,9 @@ import Link from 'next/link'
 import { LogoutButton } from '@/components/auth/logout-button'
 import { TrashClient } from './page-client'
 
+// 强制动态渲染，因为使用了 cookies 进行认证
+export const dynamic = 'force-dynamic'
+
 /**
  * 回收站页面
  * 显示已删除的卡片和牌组（如果数据库支持软删除）

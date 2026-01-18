@@ -11,6 +11,9 @@ interface PageProps {
   params: Promise<{ deckId: string }>
 }
 
+// 强制动态渲染，因为使用了 cookies 进行认证
+export const dynamic = 'force-dynamic'
+
 export default async function DeckDetailPage({ params }: PageProps) {
   const { deckId } = await params
 

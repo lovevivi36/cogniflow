@@ -6,6 +6,9 @@ import Link from 'next/link'
 import { LogoutButton } from '@/components/auth/logout-button'
 import { DashboardClient } from './page-client'
 
+// 强制动态渲染，因为使用了 cookies 进行认证
+export const dynamic = 'force-dynamic'
+
 export default async function DashboardPage() {
   try {
     const supabase = await createClient()

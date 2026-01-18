@@ -5,6 +5,9 @@ import { Button } from '@/components/ui/button'
 import { ReviewStats } from '@/components/review/review-stats'
 import Link from 'next/link'
 
+// 强制动态渲染，因为使用了 cookies 进行认证
+export const dynamic = 'force-dynamic'
+
 export default async function ReviewPage() {
   const supabase = await createClient()
   const {

@@ -2,6 +2,9 @@ import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import { CreateDeckForm } from '@/components/decks/create-deck-form'
 
+// 强制动态渲染，因为使用了 cookies 进行认证
+export const dynamic = 'force-dynamic'
+
 export default async function NewDeckPage() {
   const supabase = await createClient()
   const {

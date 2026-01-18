@@ -17,13 +17,19 @@ export const metadata: Metadata = {
   title: "CogniFlow - 深度学习工具",
   description: "结合 FSRS 记忆算法与费曼学习法的深度学习工具",
   manifest: "/manifest.json",
-  themeColor: "#0f172a",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
     title: "CogniFlow",
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: "#0f172a",
 };
 
 export default function RootLayout({
