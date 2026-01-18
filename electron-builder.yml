@@ -1,0 +1,53 @@
+appId: com.cogniflow.app
+productName: CogniFlow
+copyright: Copyright © 2024 CogniFlow
+
+directories:
+  buildResources: build
+  output: dist
+
+files:
+  - '.next/**/*'
+  - 'electron/**/*'
+  - 'package.json'
+  - 'node_modules/**/*'
+  - 'public/**/*'
+  - '!node_modules/.cache/**/*'
+  - '!node_modules/electron/**/*'
+  - '!node_modules/electron-builder/**/*'
+  - '!.next/cache/**/*'
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  icon: build/icon.ico
+  artifactName: ${productName}-${version}-${arch}.${ext}
+
+mac:
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+  icon: build/icon.icns
+  category: public.app-category.education
+  artifactName: ${productName}-${version}-${arch}.${ext}
+
+linux:
+  target:
+    - target: AppImage
+      arch:
+        - x64
+  icon: build/icon.png
+  category: Education
+  artifactName: ${productName}-${version}-${arch}.${ext}
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+
+publish: null
